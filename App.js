@@ -18,6 +18,12 @@ export default function App() {
 
       <View style={{ marginVertical: 18 }}>
         {/* On va venir "maper" sur le state todos ici ! */}
+        <View style={styles.line}>
+          <Text>Apprendre TypeScript</Text>
+        </View>
+        <View style={styles.line}>
+          <Text>Acheter du Perrier</Text>
+        </View>
       </View>
 
       <TextInput placeholder="Enter todo..." style={styles.line} />
