@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import {
   StyleSheet,
   Text,
@@ -14,7 +12,6 @@ import Checkbox from "expo-checkbox";
 import { Ionicons, Entypo } from "@expo/vector-icons";
 
 export default function App() {
-  const [todos, setTodos] = useState([]);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My TodoList 🚀</Text>
