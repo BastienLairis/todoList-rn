@@ -13,10 +13,7 @@ import { Ionicons, Entypo } from "@expo/vector-icons";
 import { useState } from "react";
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    "Apprendre Typescript",
-    "Acheter du Perrier",
-  ]);
+  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
   return (
     <View style={styles.container}>
