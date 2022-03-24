@@ -35,7 +35,7 @@ export default function App() {
         {todos.map((todo, index) => {
           return (
             <View style={styles.line} key={index}>
-              <Checkbox value={true} />
+              <Checkbox value={true} onValueChange={() => {}} />
               <Text>{todo}</Text>
               <TouchableOpacity
                 onPress={() => {
