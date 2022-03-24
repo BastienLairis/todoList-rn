@@ -21,7 +21,10 @@ import { useState } from "react";
 }
 
 export default function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    "Acheter du Perrier !",
+    "Apprendre Typescript ! !",
+  ]);
   const [input, setInput] = useState("");
   return (
     <View style={styles.container}>
@@ -32,7 +35,17 @@ export default function App() {
         {todos.map((todo, index) => {
           return (
             <View style={styles.line} key={index}>
+              <Checkbox value={true} />
               <Text>{todo}</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  const newTodos = [...todos];
+                  newTodos.splice(index, 1);
+                  setTodos(newTodos);
+                }}
+              >
+                <Ionicons name="trash-bin-sharp" size={24} color="black" />
+              </TouchableOpacity>
             </View>
           );
         })}
