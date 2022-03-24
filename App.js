@@ -12,6 +12,8 @@ import Checkbox from "expo-checkbox";
 import { Ionicons, Entypo } from "@expo/vector-icons";
 import { useState } from "react";
 
+// <Ionicons name="trash-bin-sharp" size={24} color="black" />;
+
 export default function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
