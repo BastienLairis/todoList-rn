@@ -10,18 +10,45 @@ import {
 //checkbox and icons
 import Checkbox from "expo-checkbox";
 import { Ionicons, Entypo } from "@expo/vector-icons";
+import { useState } from "react";
 
 export default function App() {
+  const [todos, setTodos] = useState([
+    "Apprendre Typescript",
+    "Acheter du Perrier",
+  ]);
+  const [input, setInput] = useState("");
   return (
     <View style={styles.container}>
       <Text style={styles.title}>My TodoList 🚀</Text>
 
       <View style={{ marginVertical: 18 }}>
         {/* On va venir "maper" sur le state todos ici ! */}
+        {todos.map((todo, index) => {
+          return (
+            <View style={styles.line} key={index}>
+              <Text>{todo}</Text>
+            </View>
+          );
+        })}
       </View>
 
-      <TextInput placeholder="Enter todo..." style={styles.line} />
-      <TouchableOpacity title="Add task" style={styles.btnContainer}>
+      <TextInput
+        placeholder="Enter todo..."
+        style={styles.line}
+        value={input}
+        onChangeText={(text) => setInput(text)}
+      />
+      <TouchableOpacity
+        title="Add task"
+        style={styles.btnContainer}
+        onPress={() => {
+          const newTodos = [...todos];
+          newTodos.push(input);
+          setTodos(newTodos);
+          setInput("");
+        }}
+      >
         <Text style={styles.btnText}>Add task 🤙</Text>
         <Entypo name="circle-with-plus" size={24} color="white" />
       </TouchableOpacity>
